@@ -24,4 +24,4 @@ jobs:
           - name: Output information reuseable workflow
             run: |
              echo "Deploying from reuseable work_flow...."
-             echo ${{ inputs.secrets }}
+             echo ${{ secrets.user_name }}
