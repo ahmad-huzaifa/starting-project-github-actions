@@ -7,6 +7,9 @@ on:
         required: false
         default: dist
         type: string
+    secrets:
+        user_name:
+            required: true
 
 jobs:
     deploy:
@@ -19,4 +22,6 @@ jobs:
           - name: List of files
             run: ls
           - name: Output information reuseable workflow
-            run: echo "Deploying from reuseable work_flow...."
+            run: |
+             echo "Deploying from reuseable work_flow...."
+             echo ${{ inputs.secrets }}
