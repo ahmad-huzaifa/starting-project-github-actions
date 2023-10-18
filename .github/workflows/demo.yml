@@ -59,3 +59,10 @@ jobs:
       artifact_name: dist-files
     secrets:
       user_name: ${{ secrets.USER }}
+  print-reuseable-workflow-output:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: print reuseable workflow output
+        run: echo ${{ needs.deploy.outputs.result }}
+
